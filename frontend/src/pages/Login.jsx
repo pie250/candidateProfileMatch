@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import {
+  useNavigate,
+  Link,
+} from "react-router-dom";
 
 import API from "../api";
 
@@ -43,8 +46,6 @@ const Login = () => {
         JSON.stringify(res.data.user)
       );
 
-      // ADMIN LOGIN
-
       if (res.data.user.role === "admin") {
 
         navigate("/admin");
@@ -76,8 +77,7 @@ const Login = () => {
           onChange={handleChange}
         />
 
-        <br />
-        <br />
+        <br /><br />
 
         <input
           type="password"
@@ -86,8 +86,7 @@ const Login = () => {
           onChange={handleChange}
         />
 
-        <br />
-        <br />
+        <br /><br />
 
         <button type="submit">
           Login
@@ -97,11 +96,9 @@ const Login = () => {
 
       <br />
 
-      <button
-        onClick={() => navigate("/signup")}
-      >
+      <Link to="/signup">
         Create Account
-      </button>
+      </Link>
 
     </div>
   );

@@ -5,15 +5,14 @@ import {
 } from "react-router-dom";
 
 import Login from "./pages/Login";
-
 import Signup from "./pages/Signup";
-
 import AdminDashboard from "./pages/AdminDashboard";
-
 import CandidateDashboard from "./pages/CandidateDashboard";
 
 function App() {
+
   return (
+
     <HashRouter>
 
       <Routes>
@@ -46,6 +45,7 @@ function App() {
       </Routes>
 
     </HashRouter>
+
   );
 }
 

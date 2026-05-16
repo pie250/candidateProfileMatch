@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import {
+  useNavigate,
+  Link,
+} from "react-router-dom";
 
 import API from "../api";
 
@@ -60,8 +63,7 @@ const Signup = () => {
           onChange={handleChange}
         />
 
-        <br />
-        <br />
+        <br /><br />
 
         <input
           type="email"
@@ -70,8 +72,7 @@ const Signup = () => {
           onChange={handleChange}
         />
 
-        <br />
-        <br />
+        <br /><br />
 
         <input
           type="password"
@@ -80,8 +81,7 @@ const Signup = () => {
           onChange={handleChange}
         />
 
-        <br />
-        <br />
+        <br /><br />
 
         <select
           name="role"
@@ -98,8 +98,7 @@ const Signup = () => {
 
         </select>
 
-        <br />
-        <br />
+        <br /><br />
 
         <button type="submit">
           Signup
@@ -109,11 +108,9 @@ const Signup = () => {
 
       <br />
 
-      <button
-        onClick={() => navigate("/login")}
-      >
+      <Link to="/login">
         Already have account?
-      </button>
+      </Link>
 
     </div>
   );
