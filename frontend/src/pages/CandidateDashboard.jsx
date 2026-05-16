@@ -1,12 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 import CandidateForm from "../components/CandidateForm";
 
 const CandidateDashboard = () => {
+
+  const navigate = useNavigate();
 
   const logout = () => {
 
     localStorage.clear();
 
-    window.location.href = "/login";
+    navigate("/login");
 
   };
 

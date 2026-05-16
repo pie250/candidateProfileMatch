@@ -1,8 +1,12 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import API from "../api";
 
 const Signup = () => {
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +37,7 @@ const Signup = () => {
 
       alert("Signup Successful");
 
-      window.location.href = "/login";
+      navigate("/login");
 
     } catch (error) {
 
@@ -105,9 +109,11 @@ const Signup = () => {
 
       <br />
 
-      <a href="/login">
+      <button
+        onClick={() => navigate("/login")}
+      >
         Already have account?
-      </a>
+      </button>
 
     </div>
   );

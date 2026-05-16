@@ -1,10 +1,14 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import JobForm from "../components/JobForm";
 
 import ShortlistedCandidates from "../components/ShortlistedCandidates";
 
 const AdminDashboard = () => {
+
+  const navigate = useNavigate();
 
   const [shortlisted, setShortlisted] =
     useState([]);
@@ -16,7 +20,7 @@ const AdminDashboard = () => {
 
     localStorage.clear();
 
-    window.location.href = "/login";
+    navigate("/login");
 
   };
 

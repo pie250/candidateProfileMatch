@@ -1,8 +1,12 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import API from "../api";
 
 const Login = () => {
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -10,10 +14,12 @@ const Login = () => {
   });
 
   const handleChange = (e) => {
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+
   };
 
   const handleSubmit = async (e) => {
@@ -41,11 +47,11 @@ const Login = () => {
 
       if (res.data.user.role === "admin") {
 
-        window.location.href = "/admin";
+        navigate("/admin");
 
       } else {
 
-        window.location.href = "/candidate";
+        navigate("/candidate");
 
       }
 
@@ -91,9 +97,11 @@ const Login = () => {
 
       <br />
 
-      <a href="/signup">
+      <button
+        onClick={() => navigate("/signup")}
+      >
         Create Account
-      </a>
+      </button>
 
     </div>
   );
