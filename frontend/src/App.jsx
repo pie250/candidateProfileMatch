@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -13,10 +13,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import CandidateDashboard from "./pages/CandidateDashboard";
 
 function App() {
-
   return (
-
-    <BrowserRouter>
+    <HashRouter>
 
       <Routes>
 
@@ -47,8 +45,7 @@ function App() {
 
       </Routes>
 
-    </BrowserRouter>
-
+    </HashRouter>
   );
 }
 
